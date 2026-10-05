@@ -7,7 +7,7 @@ Repositori ini menyajikan basis data analitis dan platform visualisasi tingkat p
 [![Universities](https://img.shields.io/badge/Universitas-50%20(35%20PTN%20%2B%2015%20PTS)-emerald.svg)](data/metadata.json)
 [![Regions](https://img.shields.io/badge/Wilayah-5%20Region%20Nusantara-purple.svg)](data/metadata.json)
 [![License](https://img.shields.io/badge/License-Open%20Educational%20Data-orange.svg)](LICENSE)
-[![Bilingual](https://img.shields.io/badge/Languages-ID%20%7C%20EN-gray.svg)](https://lunizura.github.io/keketatan-ptn-indonesia/)
+[![Bilingual](https://img.shields.io/badge/Languages-ID%20%7C%20EN-gray.svg)](https://lunizura.github.io/keketatan-univ-indonesia/)
 
 ---
 
