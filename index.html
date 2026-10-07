@@ -546,17 +546,22 @@
     <div id="section-directory" class="hidden space-y-6">
       
       <!-- Filter Bar -->
-      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
+      <div class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
+          
           <!-- Search input -->
           <div class="sm:col-span-2 lg:col-span-2">
-            <label id="dir-lbl-search" class="block text-xs font-semibold text-slate-600 mb-1">Cari Jurusan / Kampus:</label>
-            <input type="text" id="dir-search" oninput="renderDirectory()" placeholder="Contoh: Kedokteran, BINUS, Surabaya..." class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <label id="dir-lbl-search" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Cari Jurusan / Kampus:</label>
+            <div class="relative">
+              <input type="text" id="dir-search" oninput="renderDirectory()" placeholder="Contoh: Kedokteran, BINUS, Surabaya..." class="w-full pl-9 pr-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
+              <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
           </div>
+
           <!-- Filter Wilayah -->
           <div>
-            <label id="dir-lbl-wilayah" class="block text-xs font-semibold text-slate-600 mb-1">Wilayah:</label>
-            <select id="dir-wilayah-select" onchange="renderDirectory()" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <label id="dir-lbl-wilayah" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Wilayah:</label>
+            <select id="dir-wilayah-select" onchange="renderDirectory()" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
               <option value="ALL">Semua Wilayah</option>
               <option value="Jawa">Jawa</option>
               <option value="Sumatera">Sumatera</option>
@@ -565,44 +570,51 @@
               <option value="Bali-Nusa Tenggara">Bali-Nusa Tenggara</option>
             </select>
           </div>
+
           <!-- Filter Tipe (PTN / PTS) -->
           <div>
-            <label id="dir-lbl-tipe" class="block text-xs font-semibold text-slate-600 mb-1">Tipe Kampus:</label>
-            <select id="dir-tipe-select" onchange="renderDirectory()" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <label id="dir-lbl-tipe" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Tipe Kampus:</label>
+            <select id="dir-tipe-select" onchange="renderDirectory()" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
               <option value="ALL">Semua Jenis</option>
               <option value="PTN">PTN (Negeri)</option>
               <option value="PTS">PTS (Swasta)</option>
             </select>
           </div>
+
           <!-- Filter Kampus -->
           <div>
-            <label id="dir-lbl-ptn" class="block text-xs font-semibold text-slate-600 mb-1">Perguruan Tinggi:</label>
-            <select id="dir-ptn-select" onchange="renderDirectory()" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <label id="dir-lbl-ptn" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Perguruan Tinggi:</label>
+            <select id="dir-ptn-select" onchange="renderDirectory()" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
               <option value="ALL">Semua Kampus</option>
-              <!-- Dynamically populated -->
+              <!-- Dynamically populated via JS -->
             </select>
           </div>
+
           <!-- Filter Rumpun -->
           <div>
-            <label id="dir-lbl-rumpun" class="block text-xs font-semibold text-slate-600 mb-1">Rumpun Ilmu:</label>
-            <select id="dir-rumpun-select" onchange="renderDirectory()" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <label id="dir-lbl-rumpun" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Rumpun Ilmu:</label>
+            <select id="dir-rumpun-select" onchange="renderDirectory()" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-xs">
               <option value="ALL">Semua Rumpun</option>
               <option value="Saintek">Saintek (IPA)</option>
               <option value="Soshum">Soshum (IPS)</option>
             </select>
           </div>
+
         </div>
 
-        <div class="flex items-center justify-between pt-2 border-t border-slate-100 flex-wrap gap-2 text-xs">
-          <div class="text-slate-500">
-            <span id="dir-lbl-showing">Menampilkan</span> <strong id="dir-count-val" class="text-slate-800">0</strong> <span id="dir-lbl-of">dari</span> <strong id="dir-total-val" class="text-slate-800">0</strong> program studi.
+        <!-- Filter Sub-bar: Counter and View Switcher -->
+        <div class="flex items-center justify-between pt-3 border-t border-slate-100 flex-wrap gap-2 text-xs">
+          <div class="text-slate-500 font-medium">
+            <span id="dir-lbl-showing">Menampilkan</span> <strong id="dir-count-val" class="text-slate-900 font-mono-num font-bold">0</strong> <span id="dir-lbl-of">dari</span> <strong id="dir-total-val" class="text-slate-900 font-mono-num font-bold">0</strong> program studi.
           </div>
-          <div class="flex items-center space-x-2">
-            <div class="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200 font-semibold">
-              <button id="dir-view-grid" onclick="setDirView('grid')" class="px-2.5 py-1 rounded-lg bg-white text-slate-900 shadow-sm transition">Kartu</button>
-              <button id="dir-view-table" onclick="setDirView('table')" class="px-2.5 py-1 rounded-lg text-slate-600 transition">Tabel</button>
+          <div class="flex items-center space-x-2.5">
+            <div class="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200 font-semibold text-xs">
+              <button id="dir-view-grid" onclick="setDirView('grid')" class="px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-xs transition">Kartu</button>
+              <button id="dir-view-table" onclick="setDirView('table')" class="px-3 py-1.5 rounded-lg text-slate-600 transition">Tabel</button>
             </div>
-            <button onclick="resetDirFilters()" id="dir-btn-reset" class="px-3 py-1 text-slate-600 hover:text-rose-600 transition font-medium">Reset Filter</button>
+            <button onclick="resetDirFilters()" id="dir-btn-reset" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-rose-600 hover:bg-rose-50 transition font-medium border border-transparent hover:border-rose-200">
+              Reset Filter
+            </button>
           </div>
         </div>
       </div>
@@ -613,20 +625,20 @@
       </div>
 
       <!-- Directory Table Container -->
-      <div id="dir-table-container" class="hidden bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div id="dir-table-container" class="hidden bg-white rounded-2xl shadow-sm border border-slate-200/90 overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse text-xs">
             <thead>
-              <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 font-semibold">
-                <th class="p-3 w-10 text-center">No</th>
-                <th class="p-3">Program Studi</th>
-                <th class="p-3">PTN</th>
-                <th class="p-3">Rumpun</th>
-                <th class="p-3 text-right">DT (SNBT)</th>
-                <th class="p-3 text-right">Peminat</th>
-                <th class="p-3 text-center">Keketatan</th>
-                <th class="p-3 text-center">Rasio</th>
-                <th class="p-3 text-center">Tautan</th>
+              <tr class="bg-slate-100/80 text-slate-700 border-b border-slate-200 font-bold uppercase tracking-wider text-[11px]">
+                <th class="p-3.5 w-12 text-center">No</th>
+                <th class="p-3.5">Program Studi</th>
+                <th class="p-3.5">Perguruan Tinggi</th>
+                <th class="p-3.5">Rumpun</th>
+                <th class="p-3.5 text-right">Kuota (SNBT)</th>
+                <th class="p-3.5 text-right">Peminat</th>
+                <th class="p-3.5 text-center">Peluang Lolos</th>
+                <th class="p-3.5 text-center">Rasio Kursi</th>
+                <th class="p-3.5 text-center">Tautan</th>
               </tr>
             </thead>
             <tbody id="dir-table-body" class="divide-y divide-slate-100 text-slate-700">
@@ -637,17 +649,22 @@
       </div>
 
       <!-- Open Data Export Section -->
-      <div class="bg-gradient-to-r from-slate-900 to-sky-950 text-white p-6 rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 mt-6">
+      <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-sky-950 text-white p-6 sm:p-7 rounded-2xl shadow-md border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-5 mt-6">
         <div>
-          <h4 class="text-base font-bold">Unduh Dataset Terbuka (Open Data)</h4>
-          <p class="text-xs text-slate-300 mt-1">Data lengkap 295 program studi pada 50 perguruan tinggi (35 PTN &amp; 15 PTS) se-Nusantara tersedia secara gratis dalam format terbuka untuk riset dan edukasi.</p>
+          <div class="flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+            <h4 class="text-base font-bold text-white tracking-wide">Unduh Dataset Terbuka (Open Data)</h4>
+          </div>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed max-w-2xl">
+            Data lengkap 295 program studi pada 50 perguruan tinggi (35 PTN &amp; 15 PTS) se-Nusantara tersedia secara gratis dalam format terbuka untuk riset, bimbingan karir, dan edukasi publik.
+          </p>
         </div>
         <div class="flex items-center space-x-2.5 shrink-0">
-          <a href="data/ptn_keketatan.json" download class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs transition inline-flex items-center space-x-1.5">
+          <a href="data/ptn_keketatan.json" download class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-xs transition inline-flex items-center space-x-1.5 shadow-sm">
             <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             <span>Unduh JSON</span>
           </a>
-          <a href="data/ptn_keketatan.csv" download class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs transition shadow-sm inline-flex items-center space-x-1.5">
+          <a href="data/ptn_keketatan.csv" download class="px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs transition shadow-md inline-flex items-center space-x-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             <span>Unduh CSV</span>
           </a>
@@ -661,18 +678,18 @@
   <!-- ========================================== -->
   <!-- MODAL DIALOG: DETAIL PROFIL PRODI          -->
   <!-- ========================================== -->
-  <div id="prodi-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm hidden" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-prodi-name">
+  <div id="prodi-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm hidden" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="modal-prodi-name">
     <div id="modal-card" class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 flex flex-col relative">
       
       <!-- Modal Header -->
-      <div class="p-5 sm:p-6 border-b border-slate-100 relative bg-gradient-to-r from-sky-50/60 via-slate-50 to-white">
+      <div class="p-5 sm:p-6 border-b border-slate-100 relative bg-gradient-to-r from-sky-50/70 via-slate-50 to-white">
         <button id="modal-close-btn" onclick="closeProdiModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition absolute top-4 right-4" title="Tutup / Close">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
 
-        <div class="pr-8 space-y-1.5">
+        <div class="pr-8 space-y-2">
           <div class="flex items-center space-x-2 flex-wrap gap-y-1">
-            <span id="modal-ptn-badge" class="px-2.5 py-0.5 rounded-md text-xs font-bold text-white bg-sky-700"></span>
+            <span id="modal-ptn-badge" class="px-2.5 py-0.5 rounded-md text-xs font-bold text-white bg-sky-700 shadow-xs"></span>
             <span id="modal-tipe-badge" class="px-2 py-0.5 rounded text-[11px] font-bold"></span>
             <span id="modal-wilayah-badge" class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200"></span>
             <span id="modal-kode" class="text-xs font-mono text-slate-400"></span>
@@ -687,68 +704,68 @@
       <div class="p-5 sm:p-6 space-y-5 text-sm text-slate-700">
         
         <!-- Metrics Comparison: SNBT vs SNBP -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
             <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Jalur SNBT (UTBK)</span>
-            <div class="flex items-baseline justify-between">
-              <span class="text-xs text-slate-600">Daya Tampung: <strong id="modal-snbt-dt" class="text-slate-900"></strong></span>
-              <span class="text-xs text-slate-600">Peminat: <strong id="modal-snbt-pm" class="text-slate-900"></strong></span>
+            <div class="flex items-baseline justify-between text-xs">
+              <span class="text-slate-600">Daya Tampung: <strong id="modal-snbt-dt" class="text-slate-900 font-mono-num font-bold"></strong></span>
+              <span class="text-slate-600">Peminat: <strong id="modal-snbt-pm" class="text-slate-900 font-mono-num font-bold"></strong></span>
             </div>
-            <div class="flex items-center justify-between pt-1 border-t border-slate-200">
-              <span id="modal-snbt-ratio" class="font-bold text-sm text-slate-900"></span>
-              <span id="modal-snbt-pct" class="px-2 py-0.5 rounded text-xs font-bold"></span>
+            <div class="flex items-center justify-between pt-1.5 border-t border-slate-200">
+              <span id="modal-snbt-ratio" class="font-bold text-sm text-slate-900 font-mono-num"></span>
+              <span id="modal-snbt-pct" class="px-2.5 py-0.5 rounded text-xs font-bold"></span>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
             <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Jalur SNBP (Prestasi)</span>
-            <div class="flex items-baseline justify-between">
-              <span class="text-xs text-slate-600">Daya Tampung: <strong id="modal-snbp-dt" class="text-slate-900"></strong></span>
-              <span class="text-xs text-slate-600">Peminat: <strong id="modal-snbp-pm" class="text-slate-900"></strong></span>
+            <div class="flex items-baseline justify-between text-xs">
+              <span class="text-slate-600">Daya Tampung: <strong id="modal-snbp-dt" class="text-slate-900 font-mono-num font-bold"></strong></span>
+              <span class="text-slate-600">Peminat: <strong id="modal-snbp-pm" class="text-slate-900 font-mono-num font-bold"></strong></span>
             </div>
-            <div class="flex items-center justify-between pt-1 border-t border-slate-200">
-              <span id="modal-snbp-ratio" class="font-bold text-sm text-slate-900"></span>
-              <span id="modal-snbp-pct" class="px-2 py-0.5 rounded text-xs font-bold"></span>
+            <div class="flex items-center justify-between pt-1.5 border-t border-slate-200">
+              <span id="modal-snbp-ratio" class="font-bold text-sm text-slate-900 font-mono-num"></span>
+              <span id="modal-snbp-pct" class="px-2.5 py-0.5 rounded text-xs font-bold"></span>
             </div>
           </div>
         </div>
 
         <!-- 3-Year Historical Trend Bars -->
         <div class="space-y-2">
-          <h4 id="modal-sec-trend" class="text-xs font-bold text-sky-800 tracking-wider uppercase">Riwayat Tren Peminat 3 Tahun (SNBT)</h4>
-          <div id="modal-trend-bars" class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <!-- Dynamically injected bars -->
+          <h4 id="modal-sec-trend" class="text-xs font-bold text-sky-900 tracking-wider uppercase">Riwayat Tren Peminat 3 Tahun (SNBT)</h4>
+          <div id="modal-trend-bars" class="space-y-2.5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <!-- Dynamically injected bars via JS -->
           </div>
         </div>
 
         <!-- About Description -->
         <div class="space-y-1.5">
-          <h4 id="modal-sec-about" class="text-xs font-bold text-sky-800 tracking-wider uppercase">Tentang Program Studi</h4>
-          <p id="modal-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50/70 p-3.5 rounded-xl border border-slate-100"></p>
+          <h4 id="modal-sec-about" class="text-xs font-bold text-sky-900 tracking-wider uppercase">Tentang Program Studi</h4>
+          <p id="modal-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50/70 p-4 rounded-xl border border-slate-100"></p>
         </div>
 
         <!-- Curriculum Focus -->
         <div class="space-y-2">
-          <h4 id="modal-sec-focus" class="text-xs font-bold text-sky-800 tracking-wider uppercase">Fokus Pembelajaran &amp; Keilmuan</h4>
+          <h4 id="modal-sec-focus" class="text-xs font-bold text-sky-900 tracking-wider uppercase">Fokus Pembelajaran &amp; Keilmuan</h4>
           <ul id="modal-focus-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs"></ul>
         </div>
 
         <!-- Career Opportunities -->
         <div class="space-y-2">
-          <h4 id="modal-sec-career" class="text-xs font-bold text-sky-800 tracking-wider uppercase">Prospek Karir Lulusan</h4>
+          <h4 id="modal-sec-career" class="text-xs font-bold text-sky-900 tracking-wider uppercase">Prospek Karir Lulusan</h4>
           <div id="modal-career-tags" class="flex flex-wrap gap-1.5"></div>
         </div>
 
       </div>
 
       <!-- Modal Footer -->
-      <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs font-semibold">
-        <button id="modal-btn-copy" onclick="copyModalLink()" class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition shadow-sm inline-flex items-center space-x-1.5">
+      <div class="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2.5 text-xs font-semibold">
+        <button id="modal-btn-copy" onclick="copyModalLink()" class="px-4 py-2 rounded-xl bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition shadow-xs inline-flex items-center space-x-1.5">
           <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
           <span id="modal-lbl-copy">Salin Tautan</span>
         </button>
         <div class="flex items-center space-x-2">
-          <a id="modal-btn-spmb" href="#" target="_blank" class="px-3.5 py-2 rounded-xl bg-sky-700 hover:bg-sky-800 text-white transition shadow-sm inline-flex items-center space-x-1">
+          <a id="modal-btn-spmb" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-sky-700 hover:bg-sky-800 text-white transition shadow-sm inline-flex items-center space-x-1">
             <span id="modal-lbl-spmb">Portal SPMB Kampus</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
@@ -768,10 +785,10 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 space-y-1.5">
+  <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
       <p id="footer-source">Data dihimpun dari portal resmi <strong>BPPP Kemendikbudristek (SNPMB)</strong> dan pusat penerimaan mahasiswa baru 50 perguruan tinggi terkemuka di Indonesia.</p>
-      <p class="text-slate-400"><span id="footer-license">Dirilis untuk kepentingan publik dan edukasi calon mahasiswa baru se-Indonesia.</span></p>
+      <p class="text-slate-400"><span id="footer-license">Dirilis untuk kepentingan publik dan edukasi calon mahasiswa baru se-Indonesia. Zero emojis policy enforced.</span></p>
     </div>
   </footer>
 
@@ -1359,8 +1376,8 @@
 
     function setDirView(view) {
       dirView = view;
-      document.getElementById('dir-view-grid').className = view === 'grid' ? "px-2.5 py-1 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-2.5 py-1 rounded-lg text-slate-600 transition";
-      document.getElementById('dir-view-table').className = view === 'table' ? "px-2.5 py-1 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-2.5 py-1 rounded-lg text-slate-600 transition";
+      document.getElementById('dir-view-grid').className = view === 'grid' ? "px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-xs transition" : "px-3 py-1.5 rounded-lg text-slate-600 transition";
+      document.getElementById('dir-view-table').className = view === 'table' ? "px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-xs transition" : "px-3 py-1.5 rounded-lg text-slate-600 transition";
 
       if (view === 'grid') {
         document.getElementById('dir-grid-container').classList.remove('hidden');
@@ -1416,11 +1433,11 @@
         const kat = currentLang === 'en' ? m.kategori_en : m.kategori;
 
         return `
-          <div onclick="openProdiModal('${item.id}')" class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-sky-300 transition p-5 flex flex-col justify-between group cursor-pointer">
+          <div onclick="openProdiModal('${item.id}')" class="bg-white rounded-2xl border border-slate-200 hover:border-sky-400 hover:shadow-lg transition p-5 flex flex-col justify-between group cursor-pointer">
             <div>
-              <div class="flex items-center justify-between gap-2 mb-2.5">
+              <div class="flex items-center justify-between gap-2 mb-3">
                 <div class="flex items-center space-x-1.5 flex-wrap gap-y-1">
-                  <span class="px-2.5 py-0.5 rounded-md text-xs font-bold text-white" style="background-color: ${ptnCatalog[item.ptn_id]?.warna || '#0284c7'}">
+                  <span class="px-2.5 py-0.5 rounded-md text-xs font-bold text-white shadow-xs" style="background-color: ${ptnCatalog[item.ptn_id]?.warna || '#0284c7'}">
                     ${item.ptn_singkatan}
                   </span>
                   <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.ptn_tipe === 'PTN' ? 'badge-ptn' : 'badge-pts'}">
@@ -1433,23 +1450,23 @@
                 <span class="px-2 py-0.5 rounded text-[11px] font-bold ${m.badge_class}">${kat}</span>
               </div>
 
-              <h4 class="text-base font-bold text-slate-900 group-hover:text-sky-700 transition leading-snug">
+              <h4 class="text-base font-extrabold text-slate-900 group-hover:text-sky-700 transition leading-snug">
                 ${prodiName}
               </h4>
               <p class="text-xs text-slate-500 mt-1">${item.ptn_nama} &bull; ${item.ptn_kota}</p>
 
-              <div class="mt-3 flex items-center space-x-1.5 flex-wrap gap-y-1">
-                <span class="px-2 py-0.5 rounded text-[10px] font-semibold ${item.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">${item.rumpun}</span>
+              <div class="mt-3.5 flex items-center space-x-1.5 flex-wrap gap-y-1">
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-semibold ${item.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">${item.rumpun}</span>
                 <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 border border-slate-200">Akreditasi ${item.akreditasi_prodi}</span>
               </div>
             </div>
 
             <div class="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs">
               <div>
-                <span class="text-slate-400">Rasio:</span> <strong class="font-mono text-slate-800">${m.rasio_persaingan}</strong>
+                <span class="text-slate-400 font-medium">Rasio:</span> <strong class="font-mono text-slate-900">${m.rasio_persaingan}</strong>
               </div>
               <div>
-                <span class="text-slate-400">Peluang:</span> <strong class="text-slate-900">${m.keketatan_persen}%</strong>
+                <span class="text-slate-400 font-medium">Peluang:</span> <strong class="text-slate-900 font-mono-num font-bold">${m.keketatan_persen}%</strong>
               </div>
             </div>
           </div>
@@ -1463,23 +1480,23 @@
         const prodiName = currentLang === 'en' ? item.nama_prodi_en : item.nama_prodi;
 
         return `
-          <tr onclick="openProdiModal('${item.id}')" class="hover:bg-sky-50/50 cursor-pointer transition">
-            <td class="p-3 text-center text-slate-400 font-mono">${idx + 1}</td>
-            <td class="p-3 font-bold text-slate-900">${prodiName}</td>
+          <tr onclick="openProdiModal('${item.id}')" class="hover:bg-sky-50/60 cursor-pointer transition group border-b border-slate-100">
+            <td class="p-3 text-center text-slate-400 font-mono-num">${idx + 1}</td>
+            <td class="p-3 font-bold text-slate-900 group-hover:text-sky-700 transition">${prodiName}</td>
             <td class="p-3 font-semibold text-slate-700">
-              <span class="inline-flex items-center space-x-1">
-                <span>${item.ptn_singkatan}</span>
+              <div class="flex items-center space-x-1.5">
+                <span class="px-2 py-0.5 rounded text-xs font-bold text-white" style="background-color: ${ptnCatalog[item.ptn_id]?.warna || '#0284c7'}">${item.ptn_singkatan}</span>
                 <span class="text-[10px] px-1.5 py-0.5 rounded font-bold ${item.ptn_tipe === 'PTN' ? 'badge-ptn' : 'badge-pts'}">${item.ptn_tipe}</span>
-              </span>
-              <div class="text-[10px] text-slate-400">${item.ptn_wilayah}</div>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-0.5">${item.ptn_wilayah}</div>
             </td>
-            <td class="p-3"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold ${item.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">${item.rumpun}</span></td>
-            <td class="p-3 text-right font-medium">${m.daya_tampung}</td>
-            <td class="p-3 text-right font-bold">${m.peminat.toLocaleString()}</td>
-            <td class="p-3 text-center font-bold text-slate-900">${m.keketatan_persen}%</td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-semibold ${item.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">${item.rumpun}</span></td>
+            <td class="p-3 text-right font-mono-num font-medium">${m.daya_tampung}</td>
+            <td class="p-3 text-right font-mono-num font-bold">${m.peminat.toLocaleString()}</td>
+            <td class="p-3 text-center font-mono-num font-extrabold text-slate-900">${m.keketatan_persen}%</td>
             <td class="p-3 text-center font-mono font-semibold">${m.rasio_persaingan}</td>
             <td class="p-3 text-center" onclick="event.stopPropagation()">
-              <a href="${item.ptn_spmb_url}" target="_blank" class="p-1 text-sky-700 hover:text-sky-900" title="SPMB"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+              <a href="${item.ptn_spmb_url}" target="_blank" class="p-1.5 rounded-lg text-sky-700 hover:text-sky-900 hover:bg-sky-100 transition inline-block" title="Portal SPMB"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
             </td>
           </tr>
         `;
@@ -1545,11 +1562,11 @@
         return `
           <div class="space-y-1">
             <div class="flex justify-between text-xs font-semibold text-slate-700">
-              <span>Tahun ${year}</span>
-              <span><strong>${val.toLocaleString()}</strong> peminat</span>
+              <span class="text-slate-500">Tahun ${year}</span>
+              <span><strong class="font-mono-num text-slate-900">${val.toLocaleString()}</strong> peminat</span>
             </div>
-            <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-sky-600 h-full rounded-full" style="width: ${barWidth}%"></div>
+            <div class="w-full bg-slate-200/80 rounded-full h-2.5 overflow-hidden">
+              <div class="bg-gradient-to-r from-sky-700 to-sky-500 h-full rounded-full transition-all duration-300" style="width: ${barWidth}%"></div>
             </div>
           </div>
         `;
@@ -1563,16 +1580,16 @@
       const fokusObj = prof.fokus || {};
       const fokusList = fokusObj[currentLang] || fokusObj['id'] || [];
       document.getElementById('modal-focus-list').innerHTML = fokusList.map(f => `
-        <li class="flex items-start bg-slate-50 border border-slate-200/80 rounded-lg p-2 text-slate-700">
-          <svg class="w-3.5 h-3.5 text-sky-600 mr-1.5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-          <span>${f}</span>
+        <li class="flex items-start bg-slate-50 border border-slate-200/80 rounded-lg p-2.5 text-slate-700">
+          <svg class="w-3.5 h-3.5 text-sky-600 mr-2 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span class="leading-relaxed">${f}</span>
         </li>
       `).join('');
 
       const careerObj = prof.karir || {};
       const careerList = careerObj[currentLang] || careerObj['id'] || [];
       document.getElementById('modal-career-tags').innerHTML = careerList.map(c => `
-        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-800 border border-sky-200">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-800 border border-sky-200 shadow-2xs">
           ${c}
         </span>
       `).join('');
