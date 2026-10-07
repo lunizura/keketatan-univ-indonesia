@@ -13,12 +13,21 @@
   <meta property="og:title" content="Indeks &amp; Kalkulator Keketatan Top 50 Universitas Indonesia | PTN &amp; PTS">
   <meta property="og:description" content="Eksplorasi data daya tampung, peminat, tingkat keketatan, dan simulator strategi pilihan 1 &amp; 2 untuk 50 perguruan tinggi terbaik di Indonesia (35 PTN &amp; 15 PTS).">
 
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          },
           colors: {
             brand: {
               50: '#f0f9ff',
@@ -28,6 +37,13 @@
               700: '#0369a1',
               800: '#075985',
               900: '#0c4a6e',
+              950: '#082f49'
+            },
+            obsidian: {
+              900: '#0a1128',
+              800: '#001f54',
+              700: '#034078',
+              600: '#1282a2'
             }
           }
         }
@@ -36,6 +52,24 @@
   </script>
 
   <style>
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #f8fafc;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono-num {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Editorial Badges */
     .badge-sangat-ketat {
       background-color: #fff1f2;
       color: #9f1239;
@@ -67,19 +101,72 @@
       border: 1px solid #f5d0fe;
     }
     .badge-ptn {
-      background-color: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
+      background-color: #f0f9ff;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
     }
     .badge-pts {
       background-color: #faf5ff;
-      color: #7e22ce;
+      color: #6b21a8;
       border: 1px solid #e9d5ff;
     }
+
+    /* Editorial Tab Navigation */
     .tab-active {
-      border-bottom-color: #0284c7;
-      color: #0284c7;
+      background-color: #ffffff;
+      color: #0c4a6e;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+      border-color: #0284c7;
       font-weight: 700;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Interactive Density Meter */
+    .meter-track {
+      background: #f1f5f9;
+      border-radius: 9999px;
+      overflow: hidden;
+      height: 6px;
+    }
+    .meter-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.4s ease;
+    }
+
+    /* Rank Medals */
+    .rank-medal-1 {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #92400e;
+      border: 1px solid #f59e0b;
+      box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+    }
+    .rank-medal-2 {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #334155;
+      border: 1px solid #94a3b8;
+      box-shadow: 0 2px 4px rgba(148, 163, 184, 0.2);
+    }
+    .rank-medal-3 {
+      background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+      color: #9a3412;
+      border: 1px solid #f97316;
+      box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
     }
   </style>
 </head>
