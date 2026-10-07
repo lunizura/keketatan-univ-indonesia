@@ -172,100 +172,141 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans">
 
-  <!-- Top Announcement Bar -->
-  <header class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span id="announcement-text">Basis Data Resmi Top 50 Perguruan Tinggi Indonesia &bull; 35 PTN &bull; 15 PTS &bull; 5 Wilayah Nusantara</span>
+  <!-- Top Announcement Masthead -->
+  <header class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800/80 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
+      <div class="flex items-center space-x-2.5">
+        <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-400 ring-4 ring-emerald-500/20"></span>
+        <span id="announcement-text" class="font-medium tracking-wide">Basis Data Resmi Top 50 Perguruan Tinggi Indonesia &bull; 35 PTN &bull; 15 PTS &bull; 5 Wilayah Nusantara</span>
       </div>
       <div class="flex items-center space-x-4">
-        <span class="text-slate-400" id="announcement-updated">Diperbarui: 03 Oktober 2026</span>
-        <button id="lang-toggle-btn" class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" title="Ganti Bahasa / Switch Language">
+        <span class="text-slate-400 font-mono-num hidden md:inline" id="announcement-updated">Diperbarui: 03 Oktober 2026</span>
+        <button id="lang-toggle-btn" class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-md bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 transition shadow-inner font-mono text-xs" title="Ganti Bahasa / Switch Language">
           <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
           <span id="lang-label-id" class="font-bold text-sky-400">ID</span>
-          <span class="text-slate-500">|</span>
+          <span class="text-slate-600">/</span>
           <span id="lang-label-en" class="font-normal text-slate-400">EN</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Main Navbar -->
-  <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <!-- Editorial Main Navigation -->
+  <nav class="bg-white border-b border-slate-200 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-700 to-sky-500 flex items-center justify-center text-white shadow-sm font-black text-sm tracking-tight text-center leading-none">
-            TOP<br>50
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center space-x-3.5">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-slate-950 via-sky-900 to-sky-700 flex flex-col items-center justify-center text-white shadow-md font-extrabold tracking-tighter leading-none border border-sky-600/30">
+            <span class="text-[11px] text-sky-300 font-semibold tracking-wider">TOP</span>
+            <span class="text-base text-white font-extrabold">50</span>
           </div>
           <div>
-            <h1 id="nav-title" class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">
-              Indeks Keketatan Top 50 Kampus Indonesia
-            </h1>
-            <p id="nav-subtitle" class="text-xs text-slate-500 hidden sm:block">
+            <div class="flex items-center space-x-2">
+              <h1 id="nav-title" class="text-lg sm:text-xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                Indeks Keketatan Top 50 Kampus Indonesia
+              </h1>
+              <span class="hidden lg:inline-flex px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-sky-50 text-sky-800 border border-sky-200">
+                Observatorium Nasional
+              </span>
+            </div>
+            <p id="nav-subtitle" class="text-xs text-slate-500 mt-0.5 hidden sm:block">
               Analisis Daya Tampung &bull; Peminat &bull; Kalkulator Strategi 35 PTN &amp; 15 PTS Se-Nusantara
             </p>
           </div>
         </div>
 
-        <div class="flex items-center space-x-2">
-          <a href="https://github.com/lunizura/keketatan-univ-indonesia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition border border-slate-200">
+        <div class="flex items-center space-x-3">
+          <a href="https://github.com/lunizura/keketatan-univ-indonesia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-3.5 py-1.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 rounded-lg transition border border-slate-300/80 shadow-sm">
             <svg class="w-4 h-4 text-slate-800" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            <span class="hidden sm:inline">GitHub</span>
+            <span class="font-medium">GitHub Repository</span>
           </a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero & Quick Stats Section -->
-  <section class="bg-gradient-to-b from-sky-50/70 via-white to-slate-50 border-b border-slate-200 py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="max-w-3xl mb-6">
-        <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 border border-sky-200 mb-3">
-          <span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
+  <!-- Editorial Hero & Observatory Brief -->
+  <section class="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800 relative overflow-hidden">
+    <!-- Subtle geometric background accent -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#38bdf8 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="max-w-3xl mb-8">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-400/20 mb-3.5 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
           <span id="hero-pill">Seleksi Nasional &amp; Penerimaan Mahasiswa Baru Mandiri</span>
         </div>
-        <h2 id="hero-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        <h2 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
           Panduan Keketatan &amp; Peluang Masuk Top 50 Kampus Indonesia
         </h2>
-        <p id="hero-desc" class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+        <p id="hero-desc" class="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
           Ketahui tingkat persaingan riil program studi impian Anda di 50 universitas terkemuka di Indonesia (35 PTN &amp; 15 PTS). Hitung rasio persaingan (1 : N), persentase keketatan, dan uji kombinasi strategi pilihan Anda secara objektif lintas wilayah Nusantara.
         </p>
       </div>
 
-      <!-- Quick Metrics Cards -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-          <p id="stat-ptn-lbl" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Cakupan Kampus</p>
-          <div class="mt-1 flex items-baseline space-x-2">
-            <span class="text-2xl sm:text-3xl font-extrabold text-slate-900" id="stat-ptn-val">50</span>
-            <span class="text-xs text-slate-500">35 PTN &bull; 15 PTS</span>
+      <!-- Observatory Key Metric Tiles -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+        
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-800/60 backdrop-blur-md border border-slate-700/60 shadow-lg">
+          <p id="stat-ptn-lbl" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cakupan Kampus</p>
+          <div class="mt-2 flex items-baseline space-x-2.5">
+            <span class="text-3xl sm:text-4xl font-extrabold text-white font-mono-num" id="stat-ptn-val">50</span>
+            <span class="text-xs text-sky-300 font-medium">35 PTN &bull; 15 PTS</span>
           </div>
+          <div class="mt-2 text-[11px] text-slate-400">Riset Terbuka Lintas Sektor</div>
         </div>
-        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-          <p id="stat-prodi-lbl" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Program Studi</p>
-          <div class="mt-1 flex items-baseline space-x-2">
-            <span class="text-2xl sm:text-3xl font-extrabold text-sky-700" id="stat-prodi-val">295</span>
-            <span class="text-xs text-slate-500">Jurusan Favorit</span>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-800/60 backdrop-blur-md border border-slate-700/60 shadow-lg">
+          <p id="stat-prodi-lbl" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Program Studi</p>
+          <div class="mt-2 flex items-baseline space-x-2.5">
+            <span class="text-3xl sm:text-4xl font-extrabold text-sky-400 font-mono-num" id="stat-prodi-val">295</span>
+            <span class="text-xs text-slate-300">Jurusan Favorit</span>
           </div>
+          <div class="mt-2 text-[11px] text-slate-400">Saintek &amp; Soshum Terakreditasi</div>
         </div>
-        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-          <p id="stat-extreme-lbl" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Cakupan Wilayah</p>
-          <div class="mt-1 flex items-baseline space-x-2">
-            <span class="text-2xl sm:text-3xl font-extrabold text-emerald-600" id="stat-extreme-val">5</span>
-            <span class="text-xs text-slate-500" id="stat-extreme-sub">Zona Nusantara</span>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-800/60 backdrop-blur-md border border-slate-700/60 shadow-lg">
+          <p id="stat-extreme-lbl" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cakupan Wilayah</p>
+          <div class="mt-2 flex items-baseline space-x-2.5">
+            <span class="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-mono-num" id="stat-extreme-val">5</span>
+            <span class="text-xs text-emerald-300 font-medium" id="stat-extreme-sub">Zona Nusantara</span>
           </div>
+          <div class="mt-2 text-[11px] text-slate-400">Jawa, Sumatera, Kalimantan, Sulawesi, Bali-NT</div>
         </div>
-        <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-          <p id="stat-track-lbl" class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Jalur Seleksi</p>
-          <div class="mt-1 flex items-baseline space-x-2">
-            <span class="text-xl sm:text-2xl font-extrabold text-slate-800">SNBP &bull; SNBT &bull; SPMB</span>
+
+        <div class="p-4 sm:p-5 rounded-2xl bg-slate-800/60 backdrop-blur-md border border-slate-700/60 shadow-lg">
+          <p id="stat-track-lbl" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Jalur Seleksi</p>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-xl sm:text-2xl font-extrabold text-amber-300">SNBP &bull; SNBT &bull; SPMB</span>
           </div>
-          <p class="text-[11px] text-slate-400 mt-0.5">Prestasi, UTBK, &amp; Seleksi Mandiri</p>
+          <div class="mt-2 text-[11px] text-slate-400">Prestasi Rapor, UTBK, &amp; Mandiri</div>
+        </div>
+
+      </div>
+
+      <!-- Selectivity Scale Reference Legend -->
+      <div class="mt-6 pt-5 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <span class="text-slate-400 font-medium">Klasifikasi Keketatan Resmi:</span>
+        <div class="flex items-center space-x-2.5 flex-wrap gap-y-1.5">
+          <span class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-rose-950/70 text-rose-300 border border-rose-800/60">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+            <span>Ekstrem (&lt; 1.5%)</span>
+          </span>
+          <span class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-800/60">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span>Sangat Ketat (1.5% - 3.0%)</span>
+          </span>
+          <span class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-blue-950/70 text-blue-300 border border-blue-800/60">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+            <span>Ketat (3.0% - 6.0%)</span>
+          </span>
+          <span class="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-emerald-950/70 text-emerald-300 border border-emerald-800/60">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>Kompetitif (&gt; 6.0%)</span>
+          </span>
         </div>
       </div>
+
     </div>
   </section>
 
