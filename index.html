@@ -415,30 +415,32 @@
     <!-- TAB 2: KOMPARASI ANTAR-KAMPUS              -->
     <!-- ========================================== -->
     <div id="section-compare" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      
+      <!-- Comparison Control Panel -->
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
         <div>
-          <h3 id="comp-title" class="text-xl font-bold text-slate-900">Komparasi Prodi Sejenis Lintas Kampus</h3>
-          <p id="comp-subtitle" class="text-xs sm:text-sm text-slate-500">Bandingkan daya tampung, rasio peminat, dan keketatan jurusan yang sama di berbagai PTN top Indonesia.</p>
+          <h3 id="comp-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Komparasi Prodi Sejenis Lintas Kampus</h3>
+          <p id="comp-subtitle" class="text-xs sm:text-sm text-slate-500 mt-1">Bandingkan daya tampung, rasio peminat, dan keketatan jurusan yang sama di 50 PTN dan PTS terkemuka di Indonesia.</p>
         </div>
 
-        <div class="flex flex-wrap items-center gap-3">
+        <div class="flex flex-wrap items-center gap-4 pt-2">
           <div class="w-full sm:w-auto">
-            <label id="comp-lbl-select" class="block text-xs font-semibold text-slate-600 mb-1">Pilih Program Studi:</label>
-            <select id="compare-prodi-select" onchange="renderComparison()" class="w-full sm:w-72 px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <label id="comp-lbl-select" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Pilih Program Studi:</label>
+            <select id="compare-prodi-select" onchange="renderComparison()" class="w-full sm:w-80 px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-semibold text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
               <!-- Dynamically populated prodi options -->
             </select>
           </div>
           <div class="w-full sm:w-auto">
-            <label id="comp-lbl-track" class="block text-xs font-semibold text-slate-600 mb-1">Jalur Seleksi:</label>
+            <label id="comp-lbl-track" class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Jalur Seleksi:</label>
             <div class="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200 text-xs font-semibold">
-              <button id="comp-track-snbt" onclick="setCompareTrack('snbt')" class="px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition">SNBT</button>
-              <button id="comp-track-snbp" onclick="setCompareTrack('snbp')" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">SNBP</button>
+              <button id="comp-track-snbt" onclick="setCompareTrack('snbt')" class="px-4 py-2 rounded-lg bg-white text-slate-900 shadow-sm transition">SNBT (UTBK)</button>
+              <button id="comp-track-snbp" onclick="setCompareTrack('snbp')" class="px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition">SNBP (Rapor)</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Comparison Visual Cards & Table -->
+      <!-- Comparison Visual Results Container -->
       <div id="compare-results-container" class="space-y-6">
         <!-- Dynamically injected comparison cards -->
       </div>
@@ -448,89 +450,92 @@
     <!-- TAB 3: SIMULATOR STRATEGI PILIHAN          -->
     <!-- ========================================== -->
     <div id="section-simulator" class="hidden space-y-6">
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      
+      <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
         <div>
-          <h3 id="sim-title" class="text-xl font-bold text-slate-900">Simulator Portofolio Pilihan 1 &amp; Pilihan 2</h3>
-          <p id="sim-subtitle" class="text-xs sm:text-sm text-slate-500">Uji kelayakan kombinasi pilihan jurusan Anda. Algoritma kami menganalisis tingkat risiko agar peluang lolos Anda optimal.</p>
+          <h3 id="sim-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Simulator Portofolio Pilihan 1 &amp; Pilihan 2</h3>
+          <p id="sim-subtitle" class="text-xs sm:text-sm text-slate-500 mt-1">Uji kelayakan kombinasi pilihan jurusan Anda. Algoritma kami menganalisis tingkat risiko agar peluang lolos Anda optimal pada PTN maupun PTS.</p>
         </div>
 
         <!-- Quick Preset Scenarios -->
-        <div class="flex items-center space-x-2 flex-wrap gap-y-1.5 pt-1">
-          <span class="text-xs font-semibold text-slate-500">Contoh Skenario Cepat:</span>
-          <button onclick="applySimPreset('extreme')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 transition">
-            Kedokteran (UI + UGM) &bull; Risiko Tinggi
+        <div class="flex items-center space-x-2 flex-wrap gap-y-2 pt-1 border-t border-slate-100">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Pilihan Skenario Cepat:</span>
+          <button onclick="applySimPreset('extreme')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 transition shadow-xs">
+            Kedokteran (UI + UGM) &bull; Risiko Ekstrem
           </button>
-          <button onclick="applySimPreset('tech')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100 transition">
+          <button onclick="applySimPreset('tech')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100 transition shadow-xs">
             Informatika &amp; SI (ITB + ITS) &bull; Ambisius
           </button>
-          <button onclick="applySimPreset('balanced')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition">
+          <button onclick="applySimPreset('balanced')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition shadow-xs">
             Psikologi &amp; Komunikasi (UGM + UNS) &bull; Seimbang
           </button>
-          <button onclick="applySimPreset('hybrid_it')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition">
+          <button onclick="applySimPreset('hybrid_it')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition shadow-xs">
             Informatika (UI + TELKOM) &bull; Hibrida PTN &amp; PTS
           </button>
-          <button onclick="applySimPreset('hybrid_med')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition">
+          <button onclick="applySimPreset('hybrid_med')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition shadow-xs">
             Kedokteran (UGM + UII) &bull; Mitigasi Swasta Unggul
           </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          
           <!-- Pilihan 1 Box -->
-          <div class="p-5 rounded-2xl bg-sky-50/60 border border-sky-100 space-y-3">
+          <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/50 border border-sky-200/80 space-y-4 shadow-xs">
             <div class="flex items-center justify-between">
-              <span id="sim-choice1-badge" class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-700 text-white">Pilihan 1 (Prioritas Utama)</span>
-              <span class="text-xs text-sky-800 font-semibold" id="sim-p1-ptn-count"></span>
+              <span id="sim-choice1-badge" class="px-3 py-1 rounded-md text-xs font-bold bg-sky-700 text-white tracking-wide uppercase">Pilihan 1 (Prioritas Utama)</span>
+              <span class="text-xs text-sky-900 font-bold font-mono-num" id="sim-p1-ptn-count"></span>
             </div>
             <div>
-              <label id="sim-lbl-p1-ptn" class="block text-xs font-medium text-slate-700 mb-1">Perguruan Tinggi (PTN / PTS):</label>
-              <select id="sim-p1-ptn" onchange="updateSimProdiOptions(1)" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium shadow-sm"></select>
+              <label id="sim-lbl-p1-ptn" class="block text-xs font-bold text-slate-700 mb-1.5">Perguruan Tinggi (PTN / PTS):</label>
+              <select id="sim-p1-ptn" onchange="updateSimProdiOptions(1)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-900 shadow-sm focus:ring-2 focus:ring-sky-500"></select>
             </div>
             <div>
-              <label id="sim-lbl-p1-prodi" class="block text-xs font-medium text-slate-700 mb-1">Program Studi:</label>
-              <select id="sim-p1-prodi" onchange="runSimulation()" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium shadow-sm"></select>
+              <label id="sim-lbl-p1-prodi" class="block text-xs font-bold text-slate-700 mb-1.5">Program Studi:</label>
+              <select id="sim-p1-prodi" onchange="runSimulation()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-900 shadow-sm focus:ring-2 focus:ring-sky-500"></select>
             </div>
-            <div id="sim-p1-preview" class="p-3 bg-white rounded-xl border border-sky-200 text-xs text-slate-600">
+            <div id="sim-p1-preview" class="p-3.5 bg-white rounded-xl border border-sky-200 text-xs text-slate-600 shadow-xs">
               <!-- Dynamically populated summary -->
             </div>
           </div>
 
           <!-- Pilihan 2 Box -->
-          <div class="p-5 rounded-2xl bg-slate-100/70 border border-slate-200 space-y-3">
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-100/80 border border-slate-200/90 space-y-4 shadow-xs">
             <div class="flex items-center justify-between">
-              <span id="sim-choice2-badge" class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-slate-700 text-white">Pilihan 2 (Cadangan / Penyelamat)</span>
-              <span class="text-xs text-slate-600 font-semibold" id="sim-p2-ptn-count"></span>
+              <span id="sim-choice2-badge" class="px-3 py-1 rounded-md text-xs font-bold bg-slate-700 text-white tracking-wide uppercase">Pilihan 2 (Cadangan / Penyelamat)</span>
+              <span class="text-xs text-slate-600 font-bold font-mono-num" id="sim-p2-ptn-count"></span>
             </div>
             <div>
-              <label id="sim-lbl-p2-ptn" class="block text-xs font-medium text-slate-700 mb-1">Perguruan Tinggi (PTN / PTS):</label>
-              <select id="sim-p2-ptn" onchange="updateSimProdiOptions(2)" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium shadow-sm"></select>
+              <label id="sim-lbl-p2-ptn" class="block text-xs font-bold text-slate-700 mb-1.5">Perguruan Tinggi (PTN / PTS):</label>
+              <select id="sim-p2-ptn" onchange="updateSimProdiOptions(2)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-900 shadow-sm focus:ring-2 focus:ring-sky-500"></select>
             </div>
             <div>
-              <label id="sim-lbl-p2-prodi" class="block text-xs font-medium text-slate-700 mb-1">Program Studi:</label>
-              <select id="sim-p2-prodi" onchange="runSimulation()" class="w-full px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium shadow-sm"></select>
+              <label id="sim-lbl-p2-prodi" class="block text-xs font-bold text-slate-700 mb-1.5">Program Studi:</label>
+              <select id="sim-p2-prodi" onchange="runSimulation()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-900 shadow-sm focus:ring-2 focus:ring-sky-500"></select>
             </div>
-            <div id="sim-p2-preview" class="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-600">
+            <div id="sim-p2-preview" class="p-3.5 bg-white rounded-xl border border-slate-200 text-xs text-slate-600 shadow-xs">
               <!-- Dynamically populated summary -->
             </div>
           </div>
+
         </div>
 
         <!-- Jalur Toggle for Simulation -->
-        <div class="pt-2 flex items-center justify-between flex-wrap gap-2">
-          <div class="flex items-center space-x-2">
-            <span id="sim-lbl-evaltrack" class="text-xs font-semibold text-slate-600">Evaluasi Jalur:</span>
+        <div class="pt-3 flex items-center justify-between flex-wrap gap-3 border-t border-slate-100">
+          <div class="flex items-center space-x-2.5">
+            <span id="sim-lbl-evaltrack" class="text-xs font-bold text-slate-700 uppercase tracking-wide">Evaluasi Jalur:</span>
             <div class="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200 text-xs font-semibold">
-              <button id="sim-track-snbt" onclick="setSimTrack('snbt')" class="px-3 py-1 rounded-lg bg-white text-slate-900 shadow-sm transition">SNBT (UTBK)</button>
-              <button id="sim-track-snbp" onclick="setSimTrack('snbp')" class="px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition">SNBP</button>
+              <button id="sim-track-snbt" onclick="setSimTrack('snbt')" class="px-3.5 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition">SNBT (UTBK)</button>
+              <button id="sim-track-snbp" onclick="setSimTrack('snbp')" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">SNBP</button>
             </div>
           </div>
-          <button onclick="runSimulation()" class="px-4 py-2 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-semibold text-xs transition shadow-sm">
+          <button onclick="runSimulation()" class="px-5 py-2.5 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-bold text-xs transition shadow-md hover:shadow-lg active:scale-98">
             <span id="sim-btn-analyze">Analisis Portofolio Sekarang</span>
           </button>
         </div>
       </div>
 
       <!-- Simulation Evaluation Output Result Card -->
-      <div id="simulation-output-card" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <div id="simulation-output-card" class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
         <!-- Dynamically injected evaluation result -->
       </div>
     </div>
@@ -1049,8 +1054,8 @@
     // ==========================================
     function setCompareTrack(track) {
       compTrack = track;
-      document.getElementById('comp-track-snbt').className = track === 'snbt' ? "px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
-      document.getElementById('comp-track-snbp').className = track === 'snbp' ? "px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('comp-track-snbt').className = track === 'snbt' ? "px-4 py-2 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('comp-track-snbp').className = track === 'snbp' ? "px-4 py-2 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-4 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition";
       renderComparison();
     }
 
@@ -1064,7 +1069,7 @@
       const multiCampus = Object.keys(prodiCounts).filter(k => prodiCounts[k] >= 2).sort();
       const sel = document.getElementById('compare-prodi-select');
       sel.innerHTML = multiCampus.map(name => {
-        return `<option value="${name}">${name} (${prodiCounts[name]} Kampus)</option>`;
+        return `<option value="${name}">${name} (${prodiCounts[name]} Kampus Terdaftar)</option>`;
       }).join('');
     }
 
@@ -1080,20 +1085,22 @@
       const container = document.getElementById('compare-results-container');
 
       container.innerHTML = `
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-3 gap-2">
+        <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-4 gap-3">
             <div>
-              <h4 class="text-lg font-bold text-slate-900">${selectedName}</h4>
-              <p class="text-xs text-slate-500">Tersedia di ${matched.length} perguruan tinggi (PTN &amp; PTS) &bull; Jalur ${compTrack.toUpperCase()}</p>
+              <div class="flex items-center space-x-2">
+                <h4 class="text-xl font-extrabold text-slate-900 tracking-tight">${selectedName}</h4>
+                <span class="px-2.5 py-0.5 rounded text-xs font-semibold ${matched[0]?.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">${matched[0]?.rumpun}</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-1">Tersedia di ${matched.length} perguruan tinggi (PTN &amp; PTS) &bull; Evaluasi Jalur ${compTrack.toUpperCase()}</p>
             </div>
-            <div class="flex items-center space-x-2 flex-wrap gap-y-1">
-              <span class="px-2.5 py-1 rounded text-xs font-semibold ${matched[0]?.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">${matched[0]?.rumpun}</span>
-              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold badge-sangat-ketat">Paling Ketat: ${matched[0].ptn_singkatan} (${matched[0][compTrack].keketatan_persen}%)</span>
-              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold badge-sedang">Peluang Terbaik: ${matched[matched.length - 1].ptn_singkatan} (${matched[matched.length - 1][compTrack].keketatan_persen}%)</span>
+            <div class="flex items-center space-x-2 flex-wrap gap-y-1.5 text-xs">
+              <span class="px-3 py-1 rounded-lg font-bold badge-sangat-ketat">Paling Ketat: ${matched[0].ptn_singkatan} (${matched[0][compTrack].keketatan_persen}%)</span>
+              <span class="px-3 py-1 rounded-lg font-bold badge-sedang">Peluang Terbaik: ${matched[matched.length - 1].ptn_singkatan} (${matched[matched.length - 1][compTrack].keketatan_persen}%)</span>
             </div>
           </div>
 
-          <div class="space-y-3">
+          <div class="space-y-3.5">
             ${matched.map(item => {
               const m = item[compTrack];
               const ptn = ptnCatalog[item.ptn_id];
@@ -1101,35 +1108,35 @@
               const kat = currentLang === 'en' ? m.kategori_en : m.kategori;
 
               return `
-                <div onclick="openProdiModal('${item.id}')" class="p-4 rounded-xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition cursor-pointer bg-slate-50/50">
-                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div onclick="openProdiModal('${item.id}')" class="p-4 sm:p-5 rounded-2xl border border-slate-200 hover:border-sky-400 hover:shadow-md transition cursor-pointer bg-slate-50/40 group">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3">
                     <div class="flex items-center space-x-2 flex-wrap gap-y-1">
-                      <span class="px-2.5 py-1 rounded-md text-xs font-bold text-white" style="background-color: ${ptn?.warna || '#0284c7'}">
+                      <span class="px-2.5 py-1 rounded-md text-xs font-bold text-white shadow-xs" style="background-color: ${ptn?.warna || '#0284c7'}">
                         ${item.ptn_singkatan}
                       </span>
-                      <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${item.ptn_tipe === 'PTN' ? 'badge-ptn' : 'badge-pts'}">
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.ptn_tipe === 'PTN' ? 'badge-ptn' : 'badge-pts'}">
                         ${item.ptn_tipe}
                       </span>
-                      <strong class="text-sm text-slate-900">${item.ptn_nama}</strong>
+                      <strong class="text-sm font-bold text-slate-900 group-hover:text-sky-700 transition">${item.ptn_nama}</strong>
                       <span class="text-xs text-slate-400">(${item.ptn_kota}, ${item.ptn_wilayah})</span>
                     </div>
                     <div class="flex items-center space-x-2">
                       <span class="px-2.5 py-0.5 rounded text-xs font-bold ${m.badge_class}">${kat}</span>
-                      <span class="font-mono text-xs font-extrabold text-slate-800 bg-white px-2 py-0.5 rounded border border-slate-200">
+                      <span class="font-mono text-xs font-extrabold text-slate-900 bg-white px-2.5 py-1 rounded-lg border border-slate-200 shadow-xs">
                         ${m.rasio_persaingan}
                       </span>
                     </div>
                   </div>
 
-                  <!-- Bar visualizer -->
-                  <div class="w-full bg-slate-200 rounded-full h-3.5 overflow-hidden flex items-center mb-1.5">
-                    <div class="bg-gradient-to-r from-sky-600 to-sky-400 h-full rounded-full transition-all duration-500" style="width: ${pctWidth}%"></div>
+                  <!-- Volume Bar visualizer -->
+                  <div class="w-full bg-slate-200/80 rounded-full h-3 overflow-hidden flex items-center mb-2.5">
+                    <div class="bg-gradient-to-r from-sky-700 to-sky-500 h-full rounded-full transition-all duration-500" style="width: ${pctWidth}%"></div>
                   </div>
 
-                  <div class="flex items-center justify-between text-xs text-slate-600">
-                    <div>Peminat: <strong class="text-slate-800">${m.peminat.toLocaleString()}</strong> peserta</div>
-                    <div>Daya Tampung: <strong class="text-slate-800">${m.daya_tampung}</strong> kursi</div>
-                    <div>Peluang Lolos: <strong class="${m.keketatan_persen < 2.5 ? 'text-rose-600' : 'text-emerald-700'} font-bold">${m.keketatan_persen}%</strong></div>
+                  <div class="flex items-center justify-between text-xs text-slate-600 font-medium">
+                    <div>Peminat: <strong class="text-slate-900 font-mono-num">${m.peminat.toLocaleString()}</strong> pendaftar</div>
+                    <div>Daya Tampung: <strong class="text-slate-900 font-mono-num">${m.daya_tampung}</strong> kursi</div>
+                    <div>Peluang Lolos: <strong class="${m.keketatan_persen < 2.5 ? 'text-rose-700' : 'text-emerald-700'} font-bold font-mono-num text-sm">${m.keketatan_persen}%</strong></div>
                   </div>
                 </div>
               `;
@@ -1144,8 +1151,8 @@
     // ==========================================
     function setSimTrack(track) {
       simTrack = track;
-      document.getElementById('sim-track-snbt').className = track === 'snbt' ? "px-3 py-1 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition";
-      document.getElementById('sim-track-snbp').className = track === 'snbp' ? "px-3 py-1 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('sim-track-snbt').className = track === 'snbt' ? "px-3.5 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('sim-track-snbp').className = track === 'snbp' ? "px-3.5 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
       runSimulation();
     }
 
@@ -1239,21 +1246,22 @@
       // Update previews
       document.getElementById('sim-p1-preview').innerHTML = `
         <div class="flex items-center justify-between font-semibold">
-          <span>Keketatan: <strong>${m1.keketatan_persen}%</strong></span>
-          <span class="font-mono">${m1.rasio_persaingan}</span>
+          <span>Keketatan: <strong class="text-slate-900 font-mono-num">${m1.keketatan_persen}%</strong></span>
+          <span class="font-mono text-xs bg-slate-100 px-2 py-0.5 rounded border border-slate-200">${m1.rasio_persaingan}</span>
           <span class="px-2 py-0.5 rounded text-[10px] ${m1.badge_class}">${m1.kategori}</span>
         </div>
       `;
       document.getElementById('sim-p2-preview').innerHTML = `
         <div class="flex items-center justify-between font-semibold">
-          <span>Keketatan: <strong>${m2.keketatan_persen}%</strong></span>
-          <span class="font-mono">${m2.rasio_persaingan}</span>
+          <span>Keketatan: <strong class="text-slate-900 font-mono-num">${m2.keketatan_persen}%</strong></span>
+          <span class="font-mono text-xs bg-slate-100 px-2 py-0.5 rounded border border-slate-200">${m2.rasio_persaingan}</span>
           <span class="px-2 py-0.5 rounded text-[10px] ${m2.badge_class}">${m2.kategori}</span>
         </div>
       `;
 
       // Portfolio evaluation algorithm
-      let statusColor = "emerald";
+      let statusBorderColor = "border-emerald-500";
+      let statusBgBadge = "bg-emerald-100 text-emerald-800";
       let statusTitle = "Strategi Seimbang &amp; Rasional (Optimal Balanced Portfolio)";
       let statusDesc = "Kombinasi pilihan Anda memiliki struktur portofolio yang baik. Pilihan 1 menargetkan prodi prioritas, sementara Pilihan 2 memberikan mitigasi peluang yang lebih rasional.";
       let recommendations = [];
@@ -1262,7 +1270,8 @@
 
       // Case 1: Hybrid PTN + PTS
       if (isHybrid) {
-        statusColor = "purple";
+        statusBorderColor = "border-purple-500";
+        statusBgBadge = "bg-purple-100 text-purple-800";
         statusTitle = "Strategi Hibrida Cerdas: Menembus PTN &amp; Mengamankan PTS Unggul";
         statusDesc = `Kombinasi Pilihan 1 di ${p1.ptn_singkatan} (${p1.ptn_tipe}) dan Pilihan 2 di ${p2.ptn_singkatan} (${p2.ptn_tipe}) merupakan strategi mitigasi ideal. Anda menargetkan kampus negeri impian sembari memiliki jaring pengaman perguruan tinggi swasta berakreditasi Unggul.`;
         recommendations.push("Daftarkan diri pada jalur prestasi atau gelombang awal SPMB di " + p2.ptn_singkatan + " sebagai garansi kepastian studi.");
@@ -1271,7 +1280,8 @@
       }
       // Case 2: Inverted selectivity (Choice 2 harder than Choice 1)
       else if (m2.keketatan_persen < m1.keketatan_persen) {
-        statusColor = "amber";
+        statusBorderColor = "border-amber-500";
+        statusBgBadge = "bg-amber-100 text-amber-800";
         statusTitle = "Peringatan: Urutan Keketatan Terbalik (Inverted Selectivity)";
         statusDesc = `Pilihan 2 (${p2.nama_prodi} di ${p2.ptn_singkatan}) memiliki tingkat persaingan lebih ketat (${m2.keketatan_persen}%) dibandingkan Pilihan 1 (${m1.keketatan_persen}%).`;
         recommendations.push("Pada sistem seleksi nasional, jika Anda tidak lolos di Pilihan 1, peluang cadangan di Pilihan 2 yang lebih ketat akan jauh lebih kecil.");
@@ -1279,7 +1289,8 @@
       }
       // Case 3: Extreme Risk (Both < 2.5%)
       else if (m1.keketatan_persen < 2.5 && m2.keketatan_persen < 2.5) {
-        statusColor = "rose";
+        statusBorderColor = "border-rose-500";
+        statusBgBadge = "bg-rose-100 text-rose-800";
         statusTitle = "Risiko Ekstrem: Kedua Pilihan Sangat Ketat (High Risk Portfolio)";
         statusDesc = "Kedua jurusan yang Anda pilih berada pada zona persaingan puncak nasional (< 2.5% atau rasio di atas 1:40). Jika nilai tidak mencapai persentil teratas, ada risiko tinggi gugur di kedua pilihan.";
         recommendations.push("Pertahankan Pilihan 1 untuk memperjuangkan prodi impian Anda.");
@@ -1287,7 +1298,8 @@
       }
       // Case 4: Balanced
       else {
-        statusColor = "emerald";
+        statusBorderColor = "border-emerald-500";
+        statusBgBadge = "bg-emerald-100 text-emerald-800";
         statusTitle = "Strategi Ideal: Target Ambisius &amp; Jaring Pengaman Tersedia";
         statusDesc = "Portofolio pilihan Anda terdistribusi sehat. Pilihan 1 menampung aspirasi tinggi, sedangkan Pilihan 2 berfungsi efektif sebagai penyelamat peluang masuk perguruan tinggi.";
         recommendations.push("Fokus maksimalkan persiapan skor UTBK atau bobot portofolio prestasi Anda.");
@@ -1297,34 +1309,34 @@
       // Render output card
       const card = document.getElementById('simulation-output-card');
       card.innerHTML = `
-        <div class="border-l-4 border-${statusColor}-500 pl-4 py-1 space-y-2">
-          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-${statusColor}-100 text-${statusColor}-800">
-            Hasil Evaluasi Portofolio
+        <div class="border-l-4 ${statusBorderColor} pl-4 sm:pl-5 py-1 space-y-2.5">
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold ${statusBgBadge} tracking-wide uppercase">
+            Hasil Evaluasi Portofolio Strategis
           </span>
-          <h4 class="text-lg font-bold text-slate-900">${statusTitle}</h4>
+          <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">${statusTitle}</h4>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${statusDesc}</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-slate-100">
-          <div class="p-3 bg-slate-50 rounded-xl">
-            <span class="text-[11px] font-bold text-slate-500 uppercase">Pilihan 1 (${p1.ptn_singkatan})</span>
-            <p class="font-bold text-sm text-slate-900">${p1.nama_prodi}</p>
-            <p class="text-xs text-slate-500">Keketatan: <strong>${m1.keketatan_persen}%</strong> &bull; Rasio <strong>${m1.rasio_persaingan}</strong></p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-3 border-t border-slate-100">
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+            <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Pilihan 1 (${p1.ptn_singkatan})</span>
+            <p class="font-extrabold text-sm text-slate-900 mt-1">${p1.nama_prodi}</p>
+            <p class="text-xs text-slate-500 mt-0.5">Keketatan: <strong class="font-mono-num text-slate-900">${m1.keketatan_persen}%</strong> &bull; Rasio <strong class="font-mono-num text-slate-900">${m1.rasio_persaingan}</strong></p>
           </div>
-          <div class="p-3 bg-slate-50 rounded-xl">
-            <span class="text-[11px] font-bold text-slate-500 uppercase">Pilihan 2 (${p2.ptn_singkatan})</span>
-            <p class="font-bold text-sm text-slate-900">${p2.nama_prodi}</p>
-            <p class="text-xs text-slate-500">Keketatan: <strong>${m2.keketatan_persen}%</strong> &bull; Rasio <strong>${m2.rasio_persaingan}</strong></p>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+            <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Pilihan 2 (${p2.ptn_singkatan})</span>
+            <p class="font-extrabold text-sm text-slate-900 mt-1">${p2.nama_prodi}</p>
+            <p class="text-xs text-slate-500 mt-0.5">Keketatan: <strong class="font-mono-num text-slate-900">${m2.keketatan_persen}%</strong> &bull; Rasio <strong class="font-mono-num text-slate-900">${m2.rasio_persaingan}</strong></p>
           </div>
         </div>
 
-        <div class="space-y-1.5 pt-2">
+        <div class="space-y-2 pt-2">
           <h5 class="text-xs font-bold text-slate-700 uppercase tracking-wider">Rekomendasi Strategis:</h5>
-          <ul class="space-y-1.5 text-xs text-slate-600">
+          <ul class="space-y-2 text-xs text-slate-600">
             ${recommendations.map(r => `
-              <li class="flex items-start">
+              <li class="flex items-start bg-slate-50/70 p-2.5 rounded-lg border border-slate-100">
                 <svg class="w-4 h-4 text-sky-600 mr-2 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>${r}</span>
+                <span class="leading-relaxed">${r}</span>
               </li>
             `).join('')}
           </ul>
