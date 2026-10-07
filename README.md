@@ -146,6 +146,17 @@ Dataset disediakan secara terbuka dan terstandardisasi dalam beberapa format:
 
 ---
 
+### 6. Desain Antarmuka & Arsitektur Visual (Editorial Data-Journalism)
+
+Antarmuka web (`index.html`) mengadopsi standar visual jurnalisme data institusional:
+- **Sistem Palet Obsidian & Indigo:** Memadukan warna obsidian gelap (`#0a1128`, `#001f54`) pada area masthead dan hero dengan latar kanvas pualam hangat (`#f8fafc`) serta garis batas halus (`#e2e8f0`).
+- **Tipografi Dual-Engine:** Menggunakan `Plus Jakarta Sans` untuk judul dan teks naratif, serta `JetBrains Mono` (`font-variant-numeric: tabular-nums`) untuk penyelarasan data kuota, pendaftar, dan rasio.
+- **Medali Peringkat & Indikator Kepadatan Persaingan:** Peringkat Top 3 dilengkapi medali emas, perak, dan perunggu. Rasio persaingan (1 : N) dilengkapi meteran batang horizontal interaktif yang merefleksikan tingkat risiko kursi secara visual.
+- **Kartu Evaluasi Strategi Cerdas:** Hasil simulasi portofolio disajikan dengan garis batas aksen warna, indikator status risiko, dan rekomendasi mitigasi pemilihan program studi.
+- **Bebas Ketergantungan Eksternal Berat:** Dijalankan secara mandiri dengan performa tinggi dan nol emoji.
+
+---
+
 ## English
 
 ### 1. Overview & Educational Context
@@ -197,7 +208,20 @@ The dataset covers 50 accredited top higher education institutions across 5 geog
 
 ---
 
-### 5. Data Citation & License
+### 5. Editorial UI Design & Visual Data-Journalism Architecture
+
+The interactive platform (`index.html`) implements institutional data-journalism design standards:
+- **Obsidian & Sovereign Indigo Palette:** Combines deep dark obsidian tones (`#0a1128`, `#001f54`) in the masthead and hero with a crisp warm alabaster canvas (`#f8fafc`) and hairline borders (`#e2e8f0`).
+- **Dual-Engine Typography:** Utilizes `Plus Jakarta Sans` for editorial typography and `JetBrains Mono` (`font-variant-numeric: tabular-nums`) for tabular number alignment across quotas, applicants, and percentages.
+- **Rank Medallions & Inline Competition Density Meters:** Top 3 leaderboard entries feature gold, silver, and bronze medallions. Competition ratios (1 : N) feature dynamic horizontal density progress bars.
+- **Intelligent Strategy Assessment Card:** Portfolio simulation outcomes are delivered with colored status accents, risk level gauges, and actionable strategic advice.
+- **Zero Heavy Dependencies & Strict Zero-Emoji Compliance:** Clean, standalone runtime with 100% zero emoji compliance across all files.
+
+---
+
+### 6. Data Citation, License & Zero Emoji Compliance
 
 - **Data Attribution:** Compiled from official figures released by the National Selection Committee for Higher Education (Balai Pengelolaan Pengujian Pendidikan / BPPP SNPMB, Ministry of Education, Culture, Research, and Technology) and official admissions portals of all 50 featured institutions.
 - **License:** Open educational and public research use. Free to inspect, analyze, and build upon.
+- **Code Standards:** Strictly zero emoji codepoints enforced across markup, datasets, styles, tests, and documentation.
+
