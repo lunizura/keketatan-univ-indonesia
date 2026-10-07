@@ -310,26 +310,31 @@
     </div>
   </section>
 
-  <!-- Primary Tab Navigation -->
-  <section class="bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex space-x-4 sm:space-x-8 overflow-x-auto text-sm font-semibold" aria-label="Tabs">
-        <button id="tab-btn-leaderboard" onclick="switchTab('leaderboard')" class="py-4 px-1 border-b-2 tab-active transition whitespace-nowrap flex items-center space-x-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+  <!-- Primary Segmented Tab Navigation -->
+  <section class="bg-slate-100/90 border-b border-slate-200 sticky top-10 z-30 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
+      <nav class="flex items-center space-x-1.5 sm:space-x-2 overflow-x-auto text-xs sm:text-sm font-semibold p-1 bg-slate-200/80 rounded-xl" aria-label="Tabs">
+        
+        <button id="tab-btn-leaderboard" onclick="switchTab('leaderboard')" class="py-2.5 px-3.5 sm:px-4 rounded-lg tab-active transition whitespace-nowrap flex items-center space-x-2">
+          <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
           <span id="tab-lbl-leaderboard">Peringkat Terketat Nasional</span>
         </button>
-        <button id="tab-btn-compare" onclick="switchTab('compare')" class="py-4 px-1 border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition whitespace-nowrap flex items-center space-x-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+
+        <button id="tab-btn-compare" onclick="switchTab('compare')" class="py-2.5 px-3.5 sm:px-4 rounded-lg text-slate-600 hover:text-slate-950 hover:bg-white/60 transition whitespace-nowrap flex items-center space-x-2">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           <span id="tab-lbl-compare">Komparasi Antar-Kampus</span>
         </button>
-        <button id="tab-btn-simulator" onclick="switchTab('simulator')" class="py-4 px-1 border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition whitespace-nowrap flex items-center space-x-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+
+        <button id="tab-btn-simulator" onclick="switchTab('simulator')" class="py-2.5 px-3.5 sm:px-4 rounded-lg text-slate-600 hover:text-slate-950 hover:bg-white/60 transition whitespace-nowrap flex items-center space-x-2">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
           <span id="tab-lbl-simulator">Kalkulator Strategi Pilihan</span>
         </button>
-        <button id="tab-btn-directory" onclick="switchTab('directory')" class="py-4 px-1 border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition whitespace-nowrap flex items-center space-x-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+
+        <button id="tab-btn-directory" onclick="switchTab('directory')" class="py-2.5 px-3.5 sm:px-4 rounded-lg text-slate-600 hover:text-slate-950 hover:bg-white/60 transition whitespace-nowrap flex items-center space-x-2">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
           <span id="tab-lbl-directory">Direktori Semua Jurusan</span>
         </button>
+
       </nav>
     </div>
   </section>
@@ -914,11 +919,11 @@
         if (t === tab) {
           sec.classList.remove('hidden');
           btn.classList.add('tab-active');
-          btn.classList.remove('border-transparent', 'text-slate-500');
+          btn.classList.remove('text-slate-600', 'hover:text-slate-950', 'hover:bg-white/60');
         } else {
           sec.classList.add('hidden');
           btn.classList.remove('tab-active');
-          btn.classList.add('border-transparent', 'text-slate-500');
+          btn.classList.add('text-slate-600', 'hover:text-slate-950', 'hover:bg-white/60');
         }
       });
 
