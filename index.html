@@ -346,24 +346,30 @@
     <!-- TAB 1: LEADERBOARD NASIONAL TERKETAT       -->
     <!-- ========================================== -->
     <div id="section-leaderboard" class="space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      
+      <!-- Leaderboard Header & Interactive Filters -->
+      <div class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
-          <h3 id="lb-title" class="text-xl font-bold text-slate-900">Peringkat Program Studi Paling Ketat di Indonesia</h3>
-          <p id="lb-subtitle" class="text-xs sm:text-sm text-slate-500">Diurutkan berdasarkan persentase keketatan terendah (rasio persaingan tertinggi).</p>
+          <div class="flex items-center space-x-2">
+            <h3 id="lb-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Peringkat Program Studi Paling Ketat di Indonesia</h3>
+          </div>
+          <p id="lb-subtitle" class="text-xs sm:text-sm text-slate-500 mt-1">Diurutkan berdasarkan persentase keketatan terendah (rasio persaingan tertinggi) pada 50 perguruan tinggi top.</p>
         </div>
         
-        <!-- Controls: Jalur Toggle & Filter -->
+        <!-- Controls: Jalur Toggle & Dropdowns -->
         <div class="flex flex-wrap items-center gap-2.5">
-          <div class="inline-flex rounded-xl bg-slate-200/80 p-1 border border-slate-200 text-xs font-semibold">
-            <button id="lb-track-snbt" onclick="setLeaderboardTrack('snbt')" class="px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition">SNBT (UTBK)</button>
-            <button id="lb-track-snbp" onclick="setLeaderboardTrack('snbp')" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">SNBP (Rapor)</button>
+          <div class="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200 text-xs font-semibold">
+            <button id="lb-track-snbt" onclick="setLeaderboardTrack('snbt')" class="px-3.5 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition">SNBT (UTBK)</button>
+            <button id="lb-track-snbp" onclick="setLeaderboardTrack('snbp')" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">SNBP (Rapor)</button>
           </div>
-          <select id="lb-tipe-select" onchange="renderLeaderboard()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+          
+          <select id="lb-tipe-select" onchange="renderLeaderboard()" class="px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
             <option value="ALL">Semua Jenis (PTN &amp; PTS)</option>
             <option value="PTN">PTN (Negeri)</option>
             <option value="PTS">PTS (Swasta)</option>
           </select>
-          <select id="lb-wilayah-select" onchange="renderLeaderboard()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+
+          <select id="lb-wilayah-select" onchange="renderLeaderboard()" class="px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
             <option value="ALL">Semua Wilayah</option>
             <option value="Jawa">Jawa</option>
             <option value="Sumatera">Sumatera</option>
@@ -371,7 +377,8 @@
             <option value="Sulawesi">Sulawesi</option>
             <option value="Bali-Nusa Tenggara">Bali-Nusa Tenggara</option>
           </select>
-          <select id="lb-rumpun-select" onchange="renderLeaderboard()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+
+          <select id="lb-rumpun-select" onchange="renderLeaderboard()" class="px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
             <option value="ALL">Semua Rumpun</option>
             <option value="Saintek">Saintek (IPA)</option>
             <option value="Soshum">Soshum (IPS)</option>
@@ -379,25 +386,25 @@
         </div>
       </div>
 
-      <!-- Leaderboard Table -->
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <!-- Leaderboard Data Table -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200/90 overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse text-xs">
             <thead>
-              <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 font-semibold">
-                <th class="p-3.5 w-12 text-center">Rank</th>
-                <th class="p-3.5">Program Studi</th>
-                <th class="p-3.5">Perguruan Tinggi (PTN &amp; PTS)</th>
-                <th class="p-3.5">Rumpun</th>
-                <th class="p-3.5 text-right">Daya Tampung</th>
-                <th class="p-3.5 text-right">Peminat</th>
-                <th class="p-3.5 text-center">Persentase Keketatan</th>
-                <th class="p-3.5 text-center">Rasio Persaingan</th>
-                <th class="p-3.5 text-center">Tingkat Risiko</th>
+              <tr class="bg-slate-100/80 text-slate-700 border-b border-slate-200 font-bold uppercase tracking-wider text-[11px]">
+                <th class="p-4 w-14 text-center">Rank</th>
+                <th class="p-4">Program Studi</th>
+                <th class="p-4">Perguruan Tinggi</th>
+                <th class="p-4">Rumpun</th>
+                <th class="p-4 text-right">Kuota</th>
+                <th class="p-4 text-right">Peminat</th>
+                <th class="p-4 text-center">Peluang Lolos</th>
+                <th class="p-4 text-center">Rasio Kursi</th>
+                <th class="p-4 text-center">Tingkat Risiko</th>
               </tr>
             </thead>
             <tbody id="leaderboard-body" class="divide-y divide-slate-100 text-slate-700">
-              <!-- Dynamically populated -->
+              <!-- Dynamically populated via JS -->
             </tbody>
           </table>
         </div>
@@ -939,8 +946,8 @@
     // ==========================================
     function setLeaderboardTrack(track) {
       lbTrack = track;
-      document.getElementById('lb-track-snbt').className = track === 'snbt' ? "px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
-      document.getElementById('lb-track-snbp').className = track === 'snbp' ? "px-3 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('lb-track-snbt').className = track === 'snbt' ? "px-3.5 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
+      document.getElementById('lb-track-snbp').className = track === 'snbp' ? "px-3.5 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition" : "px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition";
       renderLeaderboard();
     }
 
@@ -973,46 +980,62 @@
         const katTitle = currentLang === 'en' ? m.kategori_en : m.kategori;
 
         let rankBadge = `${idx + 1}`;
-        if (idx === 0) rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-400 text-slate-900 font-extrabold text-xs shadow-sm">1</span>`;
-        else if (idx === 1) rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-300 text-slate-900 font-extrabold text-xs shadow-sm">2</span>`;
-        else if (idx === 2) rankBadge = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-600 text-white font-extrabold text-xs shadow-sm">3</span>`;
-        else rankBadge = `<span class="font-mono text-slate-400 text-xs">${idx + 1}</span>`;
+        if (idx === 0) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-xl rank-medal-1 font-extrabold text-xs">1</span>`;
+        else if (idx === 1) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-xl rank-medal-2 font-extrabold text-xs">2</span>`;
+        else if (idx === 2) rankBadge = `<span class="inline-flex items-center justify-center w-7 h-7 rounded-xl rank-medal-3 font-extrabold text-xs">3</span>`;
+        else rankBadge = `<span class="font-mono-num text-slate-400 font-bold text-xs">${idx + 1}</span>`;
+
+        // Bar ratio width calculation (max ratio ~ 1:120)
+        const ratioVal = parseFloat(m.rasio_persaingan.replace('1 : ', '')) || 20;
+        const meterPct = Math.min(100, Math.max(10, Math.round((ratioVal / 100) * 100)));
+        let meterColor = "#059669";
+        if (m.keketatan_persen < 1.5) meterColor = "#e11d48";
+        else if (m.keketatan_persen < 3.0) meterColor = "#d97706";
+        else if (m.keketatan_persen < 6.0) meterColor = "#2563eb";
 
         return `
-          <tr onclick="openProdiModal('${item.id}')" class="hover:bg-sky-50/50 cursor-pointer transition">
+          <tr onclick="openProdiModal('${item.id}')" class="hover:bg-sky-50/60 cursor-pointer transition group border-b border-slate-100">
             <td class="p-3.5 text-center">${rankBadge}</td>
-            <td class="p-3.5 font-bold text-slate-900 hover:text-sky-700">${prodiTitle}</td>
             <td class="p-3.5">
-              <div class="flex items-center space-x-1.5 flex-wrap gap-y-1">
-                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold text-white" style="background-color: ${ptnCatalog[item.ptn_id]?.warna || '#0284c7'}">
-                  ${item.ptn_singkatan}
-                </span>
-                <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${item.ptn_tipe === 'PTN' ? 'badge-ptn' : 'badge-pts'}">
-                  ${item.ptn_tipe}
-                </span>
-                <span class="text-slate-500 text-[11px]">${item.ptn_kota}</span>
-              </div>
-              <div class="text-[10px] text-slate-400 mt-0.5">${item.ptn_wilayah}</div>
+              <div class="font-bold text-slate-900 group-hover:text-sky-700 transition text-sm">${prodiTitle}</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Kode: <span class="font-mono">${item.kode_prodi || item.id}</span></div>
             </td>
             <td class="p-3.5">
-              <span class="px-2 py-0.5 rounded text-[11px] font-semibold ${item.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">
+              <div class="flex items-center space-x-1.5 flex-wrap gap-y-1">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-bold text-white shadow-xs" style="background-color: ${ptnCatalog[item.ptn_id]?.warna || '#0284c7'}">
+                  ${item.ptn_singkatan}
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.ptn_tipe === 'PTN' ? 'badge-ptn' : 'badge-pts'}">
+                  ${item.ptn_tipe}
+                </span>
+                <span class="text-slate-600 text-xs font-medium">${item.ptn_kota}</span>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1">${item.ptn_wilayah}</div>
+            </td>
+            <td class="p-3.5">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-semibold ${item.rumpun === 'Saintek' ? 'badge-saintek' : 'badge-soshum'}">
                 ${item.rumpun}
               </span>
             </td>
-            <td class="p-3.5 text-right font-medium text-slate-700">${m.daya_tampung}</td>
-            <td class="p-3.5 text-right font-bold text-slate-800">${m.peminat.toLocaleString()}</td>
+            <td class="p-3.5 text-right font-mono-num font-semibold text-slate-700">${m.daya_tampung}</td>
+            <td class="p-3.5 text-right font-mono-num font-bold text-slate-900">${m.peminat.toLocaleString()}</td>
             <td class="p-3.5 text-center">
-              <span class="font-extrabold text-xs ${m.keketatan_persen < 2.5 ? 'text-rose-700' : 'text-slate-900'}">
+              <span class="font-mono-num font-extrabold text-xs px-2 py-0.5 rounded-md ${m.keketatan_persen < 2.0 ? 'bg-rose-50 text-rose-700 border border-rose-200' : 'bg-slate-100 text-slate-900'}">
                 ${m.keketatan_persen}%
               </span>
             </td>
             <td class="p-3.5 text-center">
-              <span class="px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200">
-                ${m.rasio_persaingan}
-              </span>
+              <div class="space-y-1">
+                <span class="px-2 py-0.5 rounded-lg text-xs font-mono font-bold bg-slate-100 text-slate-800 border border-slate-200 inline-block">
+                  ${m.rasio_persaingan}
+                </span>
+                <div class="meter-track max-w-[80px] mx-auto">
+                  <div class="meter-fill" style="width: ${meterPct}%; background-color: ${meterColor};"></div>
+                </div>
+              </div>
             </td>
             <td class="p-3.5 text-center">
-              <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold ${m.badge_class}">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-bold ${m.badge_class}">
                 ${katTitle}
               </span>
             </td>
