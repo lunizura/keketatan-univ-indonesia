@@ -153,7 +153,7 @@ Antarmuka web (`index.html`) mengadopsi standar visual jurnalisme data institusi
 - **Tipografi Dual-Engine:** Menggunakan `Plus Jakarta Sans` untuk judul dan teks naratif, serta `JetBrains Mono` (`font-variant-numeric: tabular-nums`) untuk penyelarasan data kuota, pendaftar, dan rasio.
 - **Medali Peringkat & Indikator Kepadatan Persaingan:** Peringkat Top 3 dilengkapi medali emas, perak, dan perunggu. Rasio persaingan (1 : N) dilengkapi meteran batang horizontal interaktif yang merefleksikan tingkat risiko kursi secara visual.
 - **Kartu Evaluasi Strategi Cerdas:** Hasil simulasi portofolio disajikan dengan garis batas aksen warna, indikator status risiko, dan rekomendasi mitigasi pemilihan program studi.
-- **Bebas Ketergantungan Eksternal Berat:** Dijalankan secara mandiri dengan performa tinggi dan nol emoji.
+- **Bebas Ketergantungan Eksternal Berat:** Dijalankan secara mandiri dengan performa tinggi.
 
 ---
 
@@ -215,11 +215,11 @@ The interactive platform (`index.html`) implements institutional data-journalism
 - **Dual-Engine Typography:** Utilizes `Plus Jakarta Sans` for editorial typography and `JetBrains Mono` (`font-variant-numeric: tabular-nums`) for tabular number alignment across quotas, applicants, and percentages.
 - **Rank Medallions & Inline Competition Density Meters:** Top 3 leaderboard entries feature gold, silver, and bronze medallions. Competition ratios (1 : N) feature dynamic horizontal density progress bars.
 - **Intelligent Strategy Assessment Card:** Portfolio simulation outcomes are delivered with colored status accents, risk level gauges, and actionable strategic advice.
-- **Zero Heavy Dependencies & Strict Zero-Emoji Compliance:** Clean, standalone runtime with 100% zero emoji compliance across all files.
+- **Zero Heavy Dependencies:** Clean, standalone runtime without external framework overhead.
 
 ---
 
-### 6. Data Citation andLicense
+### 6. Data Citation & License
 
 - **Data Attribution:** Compiled from official figures released by the National Selection Committee for Higher Education (Balai Pengelolaan Pengujian Pendidikan / BPPP SNPMB, Ministry of Education, Culture, Research, and Technology) and official admissions portals of all 50 featured institutions.
 - **License:** Open educational and public research use. Free to inspect, analyze, and build upon.
