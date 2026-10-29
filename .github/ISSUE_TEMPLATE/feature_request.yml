@@ -1,0 +1,38 @@
+name: Feature Proposal
+description: Suggest an analytical comparison tool, new visual charts, or selectivity simulator features.
+title: "[FEATURE]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest enhancements for the Indonesian Top Universities Selectivity Platform.
+  - type: input
+    id: feature_title
+    attributes:
+      label: Feature Title
+      description: Concise summary of the proposed enhancement.
+      placeholder: Add multi-year applicant trend line chart
+    validations:
+      required: true
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: Problem Statement or Analytical Need
+      description: What educational choice or analytical dilemma does this feature address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution & Interface Design
+      description: Describe the user experience, controls, data visualizations, and expected outputs.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives_considered
+    attributes:
+      label: Alternative Solutions Considered
+      description: Any alternative metrics or existing external tools you evaluated?
+    validations:
+      required: false
