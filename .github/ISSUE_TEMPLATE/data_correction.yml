@@ -1,0 +1,50 @@
+name: University Data Correction
+description: Report an outdated quota, applicant count, or selectivity statistic for Indonesian universities.
+title: "[DATA]: "
+labels: ["data-correction", "needs-verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting academic data updates to the Indonesian Universities Selectivity Platform.
+  - type: input
+    id: university_name
+    attributes:
+      label: University / Institution Name
+      description: Name of the university (e.g. Universitas Indonesia, Institut Teknologi Bandung).
+      placeholder: Universitas Gadjah Mada
+    validations:
+      required: true
+  - type: input
+    id: prodi_name
+    attributes:
+      label: Study Program Name
+      description: Name of the study program (e.g. Kedokteran, Ilmu Komputer, Teknik Sipil).
+      placeholder: Ilmu Komputer
+    validations:
+      required: true
+  - type: dropdown
+    id: admission_track
+    attributes:
+      label: Admission Track Affected
+      options:
+        - SNBP (Prestasi)
+        - SNBT (UTBK)
+        - Mandiri / Jalur Lokal
+        - Multiple Tracks
+    validations:
+      required: true
+  - type: textarea
+    id: current_data
+    attributes:
+      label: Current Values in Platform
+      description: What values (capacity, applicants, selectivity %) are currently recorded?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_data
+    attributes:
+      label: Corrected Values & Official Source Link
+      description: Provide the revised figures and include the official SNPMB BPPP or university admission URL.
+    validations:
+      required: true
