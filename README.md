@@ -3,10 +3,13 @@
 
 Repositori ini menyajikan basis data analitis dan platform visualisasi tingkat persaingan (keketatan), daya tampung, serta riwayat peminat program studi pada 50 Perguruan Tinggi Negeri (PTN) dan Perguruan Tinggi Swasta (PTS) terkemuka di Indonesia (35 PTN & 15 PTS) yang mencakup 5 wilayah kepulauan (Jawa, Sumatera, Kalimantan, Sulawesi, dan Bali-Nusa Tenggara) dengan total 295 program studi terdata untuk jalur SNBP, SNBT (UTBK), dan SPMB.
 
+[![CI](https://github.com/lunizura/keketatan-univ-indonesia/actions/workflows/ci.yml/badge.svg)](https://github.com/lunizura/keketatan-univ-indonesia/actions)
 [![Dataset](https://img.shields.io/badge/Dataset-295%20Prodi-blue.svg)](data/ptn_keketatan.json)
 [![Universities](https://img.shields.io/badge/Universitas-50%20(35%20PTN%20%2B%2015%20PTS)-emerald.svg)](data/metadata.json)
 [![Regions](https://img.shields.io/badge/Wilayah-5%20Region%20Nusantara-purple.svg)](data/metadata.json)
-[![License](https://img.shields.io/badge/License-Open%20Educational%20Data-orange.svg)](LICENSE)
+[![Contributing](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 [![Bilingual](https://img.shields.io/badge/Languages-ID%20%7C%20EN-gray.svg)](https://lunizura.github.io/keketatan-univ-indonesia/)
 
 ---
@@ -44,7 +47,61 @@ $$\text{Rasio} = 1 : \left\lceil \frac{\text{Jumlah Peminat}}{\text{Daya Tampung
 
 ---
 
-### 3. Cakupan 50 Perguruan Tinggi Top Indonesia (35 PTN & 15 PTS)
+### 3. Struktur Dokumentasi & Direktori Referensi (Docs Inventory)
+
+Platform ini dilengkapi dengan basis dokumentasi komprehensif yang mencakup glosarium metrik, panduan analitis strategis, profil selektivitas universitas unggulan, serta skrip analitika distribusi:
+
+#### A. Glosarium & Standar Metrik Teknis (`docs/glossary/`)
+- [Formula & Metrik Keketatan](docs/glossary/keketatan_metrics.md): Definisi matematika rasio persaingan, rumus normalisasi persentase, dan klasifikasi ambang batas kompetisi.
+- [Mekanisme & Kuota Jalur SNBP](docs/glossary/snbp_mechanisms.md): Tata kelola kuota akreditasi sekolah (40%/25%/5%), sistem pemeringkatan elibilitas siswa, dan faktor sertifikat prestasi.
+- [Standar Skor UTBK & Desil SNBT](docs/glossary/snbt_utbk_scoring.md): Struktur subtes Tes Potensi Skolastik (TPS), Literasi Bahasa, Penalaran Matematika, dan rentang desil skor.
+- [Daya Tampung & Pergeseran Kapasitas](docs/glossary/daya_tampung.md): Analisis pergeseran alokasi kursi minimum SNBP (20%), SNBT (40%), dan Mandiri (maksimal 30-50%).
+- [Konversi Akreditasi BAN-PT & LAM](docs/glossary/akreditasi.md): Panduan kesetaraan status Akreditasi Unggul, Baik Sekali, Baik terhadap standar mutu nasional.
+
+#### B. Panduan Analitis Strategis (`docs/guides/`)
+- [Optimasi Portofolio Risiko SNBP & SNBT](docs/guides/portfolio_strategy.md): Panduan mitigasi risiko pemilihan 2 program studi, aturan urutan prioritas non-inversi, dan formasi jaring pengaman.
+- [Analisis Disparitas Selektivitas Regional](docs/guides/regional_analysis.md): Kajian analitis komparatif tingkat keketatan antara klaster Pulau Jawa vs luar Pulau Jawa.
+
+#### C. Profil Selektivitas 26 Institusi Unggulan (`docs/universities/`)
+Profil institusional mendalam menyajikan ringkasan kelembagaan, tabel keketatan program studi terfavorit, serta informasi seleksi mandiri resmi:
+- **Jawa:**
+  - [Universitas Indonesia (UI)](docs/universities/ui.md)
+  - [Institut Teknologi Bandung (ITB)](docs/universities/itb.md)
+  - [Universitas Gadjah Mada (UGM)](docs/universities/ugm.md)
+  - [Universitas Airlangga (UNAIR)](docs/universities/unair.md)
+  - [Institut Teknologi Sepuluh Nopember (ITS)](docs/universities/its.md)
+  - [Universitas Padjadjaran (UNPAD)](docs/universities/unpad.md)
+  - [Universitas Diponegoro (UNDIP)](docs/universities/undip.md)
+  - [Institut Pertanian Bogor (IPB)](docs/universities/ipb.md)
+  - [Universitas Brawijaya (UB)](docs/universities/ub.md)
+  - [Universitas Sebelas Maret (UNS)](docs/universities/uns.md)
+  - [Universitas Negeri Yogyakarta (UNY)](docs/universities/uny.md)
+  - [Universitas Negeri Semarang (UNNES)](docs/universities/unnes.md)
+  - [Universitas Pendidikan Indonesia (UPI)](docs/universities/upi.md)
+  - [Universitas Negeri Jakarta (UNJ)](docs/universities/unj.md)
+  - [Universitas Jenderal Soedirman (UNSOED)](docs/universities/unsoed.md)
+  - [Telkom University (TELKOM)](docs/universities/telkom.md)
+  - [Bina Nusantara University (BINUS)](docs/universities/binus.md)
+- **Sumatera:**
+  - [Universitas Sumatera Utara (USU)](docs/universities/usu.md)
+  - [Universitas Andalas (UNAND)](docs/universities/unand.md)
+  - [Universitas Sriwijaya (UNSRI)](docs/universities/unsri.md)
+  - [Universitas Lampung (UNILA)](docs/universities/unila.md)
+  - [Universitas Syiah Kuala (USK)](docs/universities/usk.md)
+  - [Universitas Riau (UNRI)](docs/universities/unri.md)
+- **Sulawesi:**
+  - [Universitas Hasanuddin (UNHAS)](docs/universities/unhas.md)
+  - [Universitas Sam Ratulangi (UNSRAT)](docs/universities/unsrat.md)
+- **Bali-Nusa Tenggara:**
+  - [Universitas Udayana (UNUD)](docs/universities/unud.md)
+
+#### D. Perangkat Analisis Data Desil (`scripts/` & `data/`)
+- [Skrip Ekspor Desil Keketatan Nasional](scripts/export_selectivity_deciles.py): Perangkat kalkulasi distribusi desil D1-D9 untuk jalur SNBP dan SNBT secara menyeluruh dan per-rumpun.
+- [Dataset Distribusi Desil](data/selectivity_deciles.json): Keluaran statistik siap pakai yang merinci ambang batas kuartil dan desil nasional.
+
+---
+
+### 4. Cakupan 50 Perguruan Tinggi Top Indonesia (35 PTN & 15 PTS)
 
 Basis data mencakup 50 institusi pendidikan tinggi terakreditasi Unggul di 5 wilayah nusantara:
 
@@ -103,7 +160,7 @@ Basis data mencakup 50 institusi pendidikan tinggi terakreditasi Unggul di 5 wil
 
 ---
 
-### 4. Fitur Utama Platform
+### 5. Fitur Utama Platform
 
 1. **Peringkat Terketat Nasional (National Leaderboard):**
    - Menampilkan Top 50 jurusan dengan tingkat keketatan paling kompetitif di Indonesia.
@@ -135,18 +192,20 @@ Basis data mencakup 50 institusi pendidikan tinggi terakreditasi Unggul di 5 wil
 
 ---
 
-### 5. Struktur Berkas & Data Terbuka (Open Data)
+### 6. Struktur Berkas & Data Terbuka (Open Data)
 
 Dataset disediakan secara terbuka dan terstandardisasi dalam beberapa format:
 - `data/ptn_keketatan.json`: Dataset format JSON lengkap mencakup 295 prodi pada 50 universitas.
 - `data/ptn_keketatan.js`: Format JavaScript runtime siap pakai untuk antarmuka web statis.
 - `data/ptn_keketatan.csv`: Format tabular CSV untuk analisis statistik, Google Sheets, dan pandas.
+- `data/selectivity_deciles.json`: Distribusi desil dan metrik kuartil nasional untuk SNBP dan SNBT.
 - `data/metadata.json`: Metadata pembaruan, total entri institusi dan program studi, serta lisensi.
 - `scripts/build_ptn_dataset.py`: Skrip otomasi Python untuk kompilasi dan regenerasi dataset.
+- `scripts/export_selectivity_deciles.py`: Skrip kalkulasi distribusi desil dan ringkasan eksekutif.
 
 ---
 
-### 6. Desain Antarmuka & Arsitektur Visual (Editorial Data-Journalism)
+### 7. Desain Antarmuka & Arsitektur Visual (Editorial Data-Journalism)
 
 Antarmuka web (`index.html`) mengadopsi standar visual jurnalisme data institusional:
 - **Sistem Palet Obsidian & Indigo:** Memadukan warna obsidian gelap (`#0a1128`, `#001f54`) pada area masthead dan hero dengan latar kanvas pualam hangat (`#f8fafc`) serta garis batas halus (`#e2e8f0`).
