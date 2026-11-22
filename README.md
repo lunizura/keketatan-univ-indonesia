@@ -281,4 +281,4 @@ The interactive platform (`index.html`) implements institutional data-journalism
 ### 6. Data Citation & License
 
 - **Data Attribution:** Compiled from official figures released by the National Selection Committee for Higher Education (Balai Pengelolaan Pengujian Pendidikan / BPPP SNPMB, Ministry of Education, Culture, Research, and Technology) and official admissions portals of all 50 featured institutions.
-- **License:** Open educational and public research use. Free to inspect, analyze, and build upon.
+- **License:** Released under the [MIT License](LICENSE) for open educational and public research use.
